@@ -50,7 +50,7 @@ configuration.load do
   done
       SCRIPT
       myLocation = "#{deploy_to}/../bin/autostart.sh"
-      put myScript, myLocation
+      put_sudo myScript, myLocation
       run "chmod +x #{deploy_to}/../bin/autostart.sh"
       puts "Generated autostart at #{myLocation}."
       myAutostart = <<-SCRIPT
