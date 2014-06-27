@@ -1,3 +1,5 @@
+require 'railsless-deploy'
+
 def _cset(name, *args, &block)
   unless exists?(name)
     set(name, *args, &block)
