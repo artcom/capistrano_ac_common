@@ -40,9 +40,9 @@ configuration.load do
   # --------------------------------------------
     desc "setup autostart behaviour"
     task :add_autostart_behaviour, :roles => :app do
-      run "mkdir -p #{deploy_to}/../Autostart"
-      run "mkdir -p #{deploy_to}/../bin"
-      run "mkdir -p #{deploy_to}/../.config/autostart"
+      run "sudo mkdir -p #{deploy_to}/../Autostart"
+      run "sudo mkdir -p #{deploy_to}/../bin"
+      run "sudo mkdir -p #{deploy_to}/../.config/autostart"
       myScript = <<-SCRIPT
   #!/bin/sh
   for i in `ls ~/Autostart/*`; do

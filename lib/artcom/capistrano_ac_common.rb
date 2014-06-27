@@ -25,5 +25,5 @@ configuration.load do
 
   # Load library
   require 'artcom/common'
-  #require 'artcom/linux'
+  require 'artcom/linux'
 end
