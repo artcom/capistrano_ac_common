@@ -12,8 +12,15 @@ configuration = Capistrano::Configuration.respond_to?(:instance) ?
   Capistrano.configuration(:must_exist)
 
 configuration.load do
-
 	namespace :ac_common_deploy do
+
+	# fixes annoying habit of capistrano to create root owned project directory
+	# but without use_sudo we cannot create the project directory since
+	# the runner and user are different.
+	# use as:
+	# after 'deploy:setup', 'misc:fix_permissions'     desc "setup directory structure"
+
+    desc "set all file permission to group: users"
 	  task :fix_permissions do
 	    sudo "chown -R #{user}:users #{deploy_to}"
 	  end
