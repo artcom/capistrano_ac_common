@@ -33,7 +33,7 @@ configuration.load do
 	# Task hooks
 	# --------------------------------------------
 	after 'deploy:setup',  'ac_common_deploy:fix_permissions' 
-	after 'deploy',  'ac_common_deploy:fix_permissions' 
+	after 'setup',  'ac_common_deploy:fix_permissions' 
 
 	namespace :ac_common_deploy do
 
@@ -44,7 +44,7 @@ configuration.load do
 	# after 'deploy:setup', 'misc:fix_permissions'     desc "setup directory structure"
 
 
-    desc "set all file permission to group: users"
+    desc "set all file permission to runner: runner"
 	  task :fix_permissions do
 	    sudo "chown -R #{runner}:#{runner} #{deploy_to}"
 	  end
