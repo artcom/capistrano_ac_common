@@ -33,6 +33,7 @@ configuration.load do
 	# Task hooks
 	# --------------------------------------------
 	after 'deploy:setup',  'ac_common_deploy:fix_permissions' 
+	after 'deploy',  'ac_common_deploy:fix_permissions' 
 
 	namespace :ac_common_deploy do
 
