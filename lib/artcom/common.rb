@@ -21,6 +21,7 @@ def template_sudo(from, to)
   erb = File.read(File.expand_path("../templates/#{from}", __FILE__))
   put_sudo ERB.new(erb).result(binding), to
 end
+
 # Bootstrap Capistrano instance
 configuration = Capistrano::Configuration.respond_to?(:instance) ?
   Capistrano::Configuration.instance(:must_exist) :
@@ -44,10 +45,7 @@ configuration.load do
 
     desc "set all file permission to group: users"
 	  task :fix_permissions do
-	    sudo "chown -R #{user}:users #{deploy_to}"
-	    # for task: linux:setup autostart behaviour"
-	    sudo "chown #{user}:users #{deploy_to}/../.config"
-	    sudo "chown -R #{user}:users #{deploy_to}/../.config/autostart"
+	    sudo "chown -R #{runner}:runner #{deploy_to}"
 	  end
 	end
 end
