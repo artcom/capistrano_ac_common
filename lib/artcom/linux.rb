@@ -1,5 +1,5 @@
 # Required base libraries
-require 'artcom/capistrano-y60'
+#require 'artcom/capistrano-y60'
 require 'railsless-deploy'
 
 # Bootstrap Capistrano instance
