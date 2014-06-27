@@ -66,7 +66,7 @@ configuration.load do
   Comment=starts all scripts in ~/Autostart
       SCRIPT
       myLocation = "#{deploy_to}/../.config/autostart/autostart.sh.desktop"
-      put myAutostart, myLocation
+      put_sudo put myAutostart, myLocation
     end
   end
 end
