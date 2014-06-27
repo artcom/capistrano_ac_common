@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "Gemfile",
     "README.md",
     "Rakefile",
+    "capistrano_ac_common.gemspec",
     "lib/artcom/capistrano_ac_common.rb",
     "lib/artcom/common.rb",
     "lib/artcom/linux.rb",
