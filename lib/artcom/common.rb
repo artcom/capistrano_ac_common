@@ -45,6 +45,8 @@ configuration.load do
     desc "set all file permission to group: users"
 	  task :fix_permissions do
 	    sudo "chown -R #{user}:users #{deploy_to}"
+	    # for task: linux:setup autostart behaviour"
+	    sudo "chown #{user}:users #{deploy_to}/../.config"
 	    sudo "chown -R #{user}:users #{deploy_to}/../.config/autostart"
 	  end
 	end

@@ -40,6 +40,7 @@ configuration.load do
   # --------------------------------------------
     desc "setup autostart behaviour"
     task :add_autostart_behaviour, :roles => :app do
+
       run "sudo mkdir -p #{deploy_to}/../Autostart"
       run "sudo mkdir -p #{deploy_to}/../bin"
       run "sudo mkdir -p #{deploy_to}/../.config/autostart"
